@@ -1,0 +1,352 @@
+/* Main stylesheet for portfolio website */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #222;
+    color: #f5f5f5;
+}
+
+header {
+    background: #111;
+    color: #fff;
+    padding: 0.5rem 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.site-logo-link {
+    display: flex;
+    align-items: center;
+    margin-right: 1rem;
+    background: transparent;
+    border-radius: 50%;
+    transition: background 0.2s;
+}
+
+.site-logo-link:hover {
+    background: #ff8800;
+}
+
+.site-logo-link:hover .site-logo {
+    transform: scale(1.08) rotate(-3deg);
+    filter: drop-shadow(0 0 8px #ff8800cc);
+}
+
+.site-logo {
+    height: 64px;
+    width: auto;
+    margin-right: 1rem;
+    transition: transform 0.2s, filter 0.2s;
+}
+
+nav h1 {
+    font-size: 2rem;
+    color: #ff8800;
+    margin: 0 1.5rem 0 0;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: color 0.2s, background 0.2s;
+    background: transparent;
+    border-radius: 4px;
+    padding: 0 4px;
+}
+
+nav ul li a:hover {
+    color: #111;
+    background: #ff8800;
+}
+
+section {
+    max-width: 900px;
+    margin: 2.5rem auto;
+    padding: 2rem;
+    background: #292929;
+    border-radius: 12px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+}
+
+#hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(120deg, #111 60%, #ff8800 100%);
+    color: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+}
+
+.profile-pic {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #ff8800;
+    margin-bottom: 1.2rem;
+    background: #fff;
+}
+
+h2 {
+    color: #ff8800;
+    margin-top: 0;
+}
+
+a {
+    color: #ff8800;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #fff;
+    background: #ff8800;
+    border-radius: 4px;
+    padding: 0 4px;
+}
+
+#particles-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: #141313;
+}
+
+.social-links {
+    display: flex;
+    gap: 1.2rem;
+    margin-top: 1rem;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #222;
+    transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    border: 2px solid #ff8800;
+    text-decoration: none;
+}
+
+.social-links a svg {
+    display: block;
+    width: 24px;
+    height: 24px;
+    stroke: #ff8800;
+    fill: none;
+    transition: stroke 0.2s, fill 0.2s;
+}
+
+.social-links a[aria-label="itch.io"] svg rect,
+.social-links a[aria-label="itch.io"] svg {
+    fill: #ff8800;
+    stroke: #ff8800;
+}
+
+.social-links a[aria-label="itch.io"] svg path {
+    fill: #fff;
+    stroke: none;
+}
+
+.social-links a:hover {
+    background: #ff8800;
+    transform: translateY(-3px) scale(1.08);
+    box-shadow: 0 4px 16px rgba(255,136,0,0.18);
+}
+
+.social-links a:hover svg {
+    stroke: #fff;
+    fill: none;
+}
+
+.social-links a[aria-label="itch.io"]:hover svg rect {
+    fill: #fff;
+    stroke: #fff;
+}
+
+.social-links a[aria-label="itch.io"]:hover svg path {
+    fill: #ff8800;
+}
+
+.social-links a[aria-label="itch.io"]:hover svg rect,
+.social-links a[aria-label="itch.io"]:hover svg {
+    fill: #fff;
+    stroke: #fff;
+}
+
+.project-card {
+    background: #232323;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    transition: transform 0.18s, box-shadow 0.18s;
+}
+
+.project-card:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 6px 24px rgba(255,136,0,0.13);
+}
+
+.project-thumb {
+    width: 180px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.10);
+    background: #fff;
+}
+
+.project-info {
+    flex: 1;
+}
+
+.project-info h3 {
+    margin: 0 0 0.5rem 0;
+    color: #ff8800;
+    font-size: 1.3rem;
+}
+
+.project-info p {
+    margin: 0 0 1rem 0;
+    color: #eee;
+    font-size: 1rem;
+}
+
+.project-media {
+    margin-top: 0.5rem;
+}
+
+.project-video {
+    width: 320px;
+    max-width: 100%;
+    border-radius: 8px;
+    background: #111;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.13);
+}
+
+.project-images {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0 0.5rem 0;
+    flex-wrap: wrap;
+}
+
+.project-images .project-thumb {
+    width: 180px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.10);
+    background: #fff;
+}
+
+.project-slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 1rem 0 0.5rem 0;
+    position: relative;
+}
+
+.project-slider-img {
+    width: 340px;
+    height: 220px;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.13);
+    background: #fff;
+    transition: box-shadow 0.2s;
+    display: block;
+}
+
+.slider-btn {
+    background: #232323;
+    color: #ff8800;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, transform 0.15s;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.10);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    padding: 0;
+    line-height: 1;
+}
+
+.slider-btn:hover {
+    background: #ff8800;
+    color: #fff;
+    transform: scale(1.12);
+}
+
+@media (max-width: 700px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    section {
+        padding: 1rem;
+    }
+    #hero {
+        padding: 1.5rem 0.5rem;
+    }
+    .project-slider-img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 900px) {
+    .project-card {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .project-thumb, .project-video {
+        width: 100%;
+        height: auto;
+    }
+}
