@@ -24,21 +24,27 @@ function triggerPageTransition(callback) {
     }, 500);
 }
 
-// --- Enhanced Game-like Custom Cursor Effect ---
-let cursor = document.createElement('div');
-cursor.className = 'custom-cursor';
-let cross = document.createElement('div');
-cross.className = 'custom-cursor-cross';
-cursor.appendChild(cross);
-document.body.appendChild(cursor);
-document.addEventListener('mousemove', e => {
-    cursor.style.left = e.clientX + 'px';
-    cursor.style.top = e.clientY + 'px';
-});
-document.addEventListener('mousedown', () => cursor.classList.add('active'));
-document.addEventListener('mouseup', () => cursor.classList.remove('active'));
-// Hide default cursor
-document.body.style.cursor = 'none';
+
+// --- Enhanced Game-like Custom Cursor Effect (Desktop Only) ---
+if (window.innerWidth > 700) {
+    let cursor = document.createElement('div');
+    cursor.className = 'custom-cursor';
+    let cross = document.createElement('div');
+    cross.className = 'custom-cursor-cross';
+    cursor.appendChild(cross);
+    document.body.appendChild(cursor);
+    document.addEventListener('mousemove', e => {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+    });
+    document.addEventListener('mousedown', () => cursor.classList.add('active'));
+    document.addEventListener('mouseup', () => cursor.classList.remove('active'));
+    // Hide default cursor
+    document.body.style.cursor = 'none';
+} else {
+    // Show default cursor on mobile
+    document.body.style.cursor = 'auto';
+}
 
 // --- Fade-in/Slide-in on Scroll ---
 
@@ -132,6 +138,7 @@ fetch('projects/data.json')
         });
       }
     });
+
     // Ensure fade-in/slide-in elements are visible on mobile after cards are added
     revealOnScroll();
   });
