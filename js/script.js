@@ -132,6 +132,8 @@ fetch('projects/data.json')
         });
       }
     });
+    // Ensure fade-in/slide-in elements are visible on mobile after cards are added
+    revealOnScroll();
   });
 
 // Mobile menu toggle
