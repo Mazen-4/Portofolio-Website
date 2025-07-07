@@ -41,8 +41,14 @@ document.addEventListener('mouseup', () => cursor.classList.remove('active'));
 document.body.style.cursor = 'none';
 
 // --- Fade-in/Slide-in on Scroll ---
+
 function revealOnScroll() {
     const fadeEls = document.querySelectorAll('.fade-in, .slide-in');
+    // Always show on mobile
+    if (window.innerWidth <= 700) {
+        fadeEls.forEach(el => el.classList.add('visible'));
+        return;
+    }
     fadeEls.forEach(el => {
         const rect = el.getBoundingClientRect();
         if (rect.top < window.innerHeight - 60) {
