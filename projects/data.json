@@ -34,5 +34,13 @@
       "description": "This is the website you are currently viewing! Built with HTML, CSS, and JavaScript. Features a responsive design, dynamic project gallery, and custom animations.",
       "image": "assets/images/Website img.png"
     }
+    ,
+    {
+      "title": "The Ouroboros House",
+      "description": "A horror game where you’re trapped in an endlessly looping house, each cycle twisting reality further. Built in 96 hours for GMTK Game Jam 2025.",
+      "image": "assets/images/TheOuroborosHouse_cover.png",
+      "link": "https://mazen-4.itch.io/the-ouroboros-house"
+    }
   ]
 }
+
