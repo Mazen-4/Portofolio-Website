@@ -1,0 +1,50 @@
+{
+  "projects": [
+    {
+      "title": "The Ouroboros House",
+      "description": "A horror game where you're trapped in an endlessly looping house, each cycle twisting reality further. Built in 96 hours for GMTK Game Jam 2025.",
+      "tech": ["Godot", "GDScript", "Game Jam", "Horror", "Level Design"],
+      "image": "assets/images/TheOuroborosHouse_cover.png",
+      "link": "https://mazen-4.itch.io/the-ouroboros-house"
+    },
+    {
+      "title": "Dark Souls-Inspired 2D Game, Made in C#",
+  "description": "2D platformer game built entirely from scratch using pure C#!\nInspired by the atmosphere and mechanics of Dark Souls, this game features:\n- A sword-and-shield hero with melee and ranged attacks (moonlight sword-inspired blue energy blast)\n- AI enemies with patrol and vision-based detection—including orcs and spear-throwing skeletons\n- Gameplay elements like keys, coins, chests, elevators, laser traps, and collectible apples for health\n- A \"YOU DIED\" screen with the original Dark Souls sound for an authentic feel\n- Background music and smooth scrolling environments to bring the world to life\nNo game engine used—it was built fully in C#, with assets sourced online and integrated manually.",
+      "tech": ["C#", "Pure Code", "AI", "Physics", "Game Engine"],
+      "image": "assets/images/Screenshot 2025-06-29 214514.png",
+      "video": "assets/videos/MM_longGame.mp4",
+      "images": ["assets/images/Screenshot 2025-06-29 214514.png"],
+      "link": "https://github.com/Mazen-4/Dark-Souls-Inspired-2D-Game"
+    },
+    {
+      "title": "Little Adventurer Andie: 2D Platformer Game in Godot",
+      "description": "A side-scrolling 2D platformer developed using Godot and GDScript as part of a hands-on game development course on Udemy. The game showcases core mechanics found in modern platformers, focusing on responsive movement, basic combat, and visual polish.\n This project helped me apply Godot's 2D engine features in a real gameplay context, covering scripting, player interactions, UI, and basic game architecture.",
+      "tech": ["Godot", "GDScript", "2D Platformer", "Game Design"],
+      "images": [
+        "assets/images/Udemy game.png"
+      ],
+      "video": "assets/videos/UdemyGameReview.mp4"
+    },
+    {
+      "title": "Godot Simple Platformer Game",
+      "description": "Simple 2D beginner platformer game with Godot engine using GDscript (Youtube Brackey's tutorial). A great starting project that helped me learn the fundamentals of game development and Godot's node system.",
+      "tech": ["Godot", "GDScript", "Tutorial Project"],
+      "image": "assets/images/Screenshot 2025-07-01 235409.png"
+    },
+    {
+      "title": "ASCII Simple CPP Game",
+      "description": "Simple ASCII game where a wizard in a castle shoots beams, fighting a ghost and a gorilla shooting that attack with bananas, and escaping from bats and laser beams.\n The player wins by reaching the final gate at the end of the arena.",
+      "tech": ["C++", "ASCII Art", "Console Game", "Game Logic"],
+      "images": [
+        "assets/images/Screenshot 2025-06-02 192933.png",
+        "assets/images/Screenshot 2025-06-02 193317.png"
+      ]
+    },
+    {
+      "title": "Portfolio Website",
+      "description": "This is the website you are currently viewing! Built with HTML, CSS, and JavaScript. Features a responsive design, dynamic project gallery, custom animations, and particle effects.",
+      "tech": ["HTML", "CSS", "JavaScript", "Responsive Design"],
+      "image": "assets/images/Website img.png"
+    }
+  ]
+}
