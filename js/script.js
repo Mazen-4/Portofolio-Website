@@ -179,6 +179,14 @@ fetch('projects/data.json')
                     </svg>
                     View on GitHub
                 </a>`;
+            } else if (project.link && project.link.includes('drive.google.com')) {
+                // Google Drive folder/button using official Drive image link
+                // Using Google's hosted Drive product icon so the logo is accurate.
+                const driveImgUrl = 'https://www.gstatic.com/images/branding/product/1x/drive_2020q4_48dp.png';
+                buttonHtml = `<a href="${project.link}" target="_blank" class="project-link-btn drive-btn" aria-label="Open Drive folder">
+                    <img src="${driveImgUrl}" alt="Google Drive" class="drive-icon" aria-hidden="true">
+                    Open Drive
+                </a>`;
             } else if (project.link) {
                 // Default button for other projects
                 let btnLabel = 'Download / Play';
