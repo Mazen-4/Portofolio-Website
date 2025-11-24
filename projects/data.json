@@ -29,7 +29,8 @@
       "title": "Godot Simple Platformer Game",
       "description": "Simple 2D beginner platformer game with Godot engine using GDscript (Youtube Brackey's tutorial). A great starting project that helped me learn the fundamentals of game development and Godot's node system.",
       "tech": ["Godot", "GDScript", "Tutorial Project"],
-      "image": "assets/images/Screenshot 2025-07-01 235409.png"
+      "image": "assets/images/Screenshot 2025-07-01 235409.png",
+      "link": "https://drive.google.com/drive/folders/1Y4yUwNbYHgvuh9n_XmUPiE4ZGDOt2xLz?usp=sharing"
     },
     {
       "title": "ASCII Simple CPP Game",
