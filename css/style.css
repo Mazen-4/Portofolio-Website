@@ -858,6 +858,37 @@ section a:not(.project-link-btn):not(.certificate-card):not(.resume-download-btn
     flex-shrink: 0;
 }
 
+/* Special styling for Google Drive buttons */
+.project-link-btn.drive-btn {
+    background: #0F9D58; /* Google green */
+    box-shadow: 0 4px 15px rgba(15,157,88,0.18),
+                inset 0 1px 0 rgba(255,255,255,0.08);
+    color: #fff;
+}
+
+.project-link-btn.drive-btn:hover {
+    background: #0b8a4a; /* slightly darker green */
+    box-shadow: 0 8px 25px rgba(15,157,88,0.28),
+                inset 0 1px 0 rgba(255,255,255,0.12);
+    transform: translateY(-3px);
+}
+
+/* Allow the SVG inside the Drive button to keep its multi-color paths */
+.project-link-btn.drive-btn svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+/* Drive icon image inside button */
+.drive-icon {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    margin-right: 6px;
+    vertical-align: middle;
+}
+
 /* --- Enhanced Social Links --- */
 .social-links {
     display: flex;
