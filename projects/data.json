@@ -16,6 +16,7 @@
     },
     {
       "title": "The Ouroboros House - Recursive Horror Experience",
+      "video": "assets/videos/TOH_record01.mp4",
       "description": "Developed a psychologically immersive horror game in 96 hours for GMTK Game Jam 2025. Implemented non-Euclidean level design techniques to create seamless recursive environments. Programmed dynamic event triggers and atmospheric audio systems to build tension without relying on jump scares. Praised for its narrative integration and innovative use of loop mechanics.",
       "tech": [
         "Unity 3D",
