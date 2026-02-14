@@ -9,7 +9,7 @@ function enableSoundOnFirstInteraction() {
     if (!userInteracted) {
         userInteracted = true;
         // Try to play and immediately pause to unlock audio on some browsers
-        clickSound.play().then(() => clickSound.pause()).catch(() => {});
+        clickSound.play().then(() => clickSound.pause()).catch(() => { });
         window.removeEventListener('mousedown', enableSoundOnFirstInteraction);
         window.removeEventListener('keydown', enableSoundOnFirstInteraction);
         window.removeEventListener('touchstart', enableSoundOnFirstInteraction);
@@ -22,7 +22,7 @@ window.addEventListener('touchstart', enableSoundOnFirstInteraction);
 function playClickSound() {
     if (!userInteracted) return;
     clickSound.currentTime = 0;
-    clickSound.play().catch(() => {});
+    clickSound.play().catch(() => { });
 }
 
 // --- Page Transition Overlay ---
@@ -65,24 +65,24 @@ if (window.innerWidth > 700) {
     cross.className = 'custom-cursor-cross';
     cursor.appendChild(cross);
     document.body.appendChild(cursor);
-    
+
     document.addEventListener('mousemove', e => {
         cursor.style.left = e.clientX + 'px';
         cursor.style.top = e.clientY + 'px';
     });
-    
+
     document.addEventListener('mousedown', () => {
         cursor.classList.add('active');
         playClickSound();
     });
-    
+
     document.addEventListener('mouseup', () => {
         cursor.classList.remove('active');
     });
-    
+
     // Hide default cursor
     document.body.style.cursor = 'none';
-    
+
     // Add hover effect for interactive elements
     const interactiveElements = 'a, button, .project-card, .project-thumb, .project-video';
     document.addEventListener('mouseover', (e) => {
@@ -90,7 +90,7 @@ if (window.innerWidth > 700) {
             cursor.style.transform = 'translate(-50%, -50%) scale(1.2)';
         }
     });
-    
+
     document.addEventListener('mouseout', (e) => {
         if (e.target.closest(interactiveElements)) {
             cursor.style.transform = 'translate(-50%, -50%) scale(1)';
@@ -104,18 +104,18 @@ if (window.innerWidth > 700) {
 // --- Enhanced Fade-in/Slide-in on Scroll ---
 function revealOnScroll() {
     const fadeEls = document.querySelectorAll('.fade-in, .slide-in');
-    
+
     // Always show on mobile
     if (window.innerWidth <= 700) {
         fadeEls.forEach(el => el.classList.add('visible'));
         return;
     }
-    
+
     fadeEls.forEach(el => {
         const rect = el.getBoundingClientRect();
         const windowHeight = window.innerHeight;
         const revealPoint = windowHeight - 100;
-        
+
         if (rect.top < revealPoint) {
             el.classList.add('visible');
         }
@@ -132,15 +132,15 @@ fetch('projects/data.json')
         const projects = data.projects;
         const projectsList = document.getElementById('projects-list');
         projectsList.innerHTML = '';
-        
+
         projects.forEach((project, idx) => {
             let mediaHtml = '';
-            
+
             // Add video if present
             if (project.video) {
                 mediaHtml += `<video src="${project.video}" controls poster="${project.image || (project.images && project.images[0])}" class="project-video"></video>`;
             }
-            
+
             // Add all images
             if (project.images && project.images.length > 0) {
                 project.images.forEach(imgSrc => {
@@ -161,7 +161,7 @@ fetch('projects/data.json')
             }
 
             let buttonHtml = '';
-            
+
             // Special handling for The Ouroboros House
             if (project.title && project.title.toLowerCase().includes('ouroboros')) {
                 buttonHtml = `<a href="https://mazen-4.itch.io/the-ouroboros-house" target="_blank" class="project-link-btn itch-btn">
@@ -187,6 +187,16 @@ fetch('projects/data.json')
                     <img src="${driveImgUrl}" alt="Google Drive" class="drive-icon" aria-hidden="true">
                     Open Drive
                 </a>`;
+            } else if (project.link && project.link.includes('venturepoint-egypt.com')) {
+                // VenturePoint Egypt specific button
+                buttonHtml = `<a href="${project.link}" target="_blank" class="project-link-btn website-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                    </svg>
+                    Visit Website
+                </a>`;
             } else if (project.link) {
                 // Default button for other projects
                 let btnLabel = 'Download / Play';
@@ -199,7 +209,7 @@ fetch('projects/data.json')
                     ${btnLabel}
                 </a>`;
             }
-            
+
             const card = document.createElement('div');
             card.className = 'project-card fade-in';
             card.innerHTML = `
@@ -215,9 +225,9 @@ fetch('projects/data.json')
                     ${buttonHtml}
                 </div>
             `;
-            
+
             projectsList.appendChild(card);
-            
+
             // Add sound effects
             card.addEventListener('mouseenter', playClickSound);
             const btn = card.querySelector('.project-link-btn');
@@ -245,7 +255,7 @@ if (navToggle && navMenu) {
         navToggle.classList.toggle('nav-toggle-open');
         playClickSound();
     });
-    
+
     // Close menu when clicking a link
     navMenu.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
@@ -253,7 +263,7 @@ if (navToggle && navMenu) {
             navToggle.classList.remove('nav-toggle-open');
         });
     });
-    
+
     // Close menu when clicking outside
     document.addEventListener('click', (e) => {
         if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
@@ -265,7 +275,7 @@ if (navToggle && navMenu) {
 
 // --- Page Transitions for Nav Links ---
 document.querySelectorAll('a[href^="#"]').forEach(link => {
-    link.addEventListener('click', function(e) {
+    link.addEventListener('click', function (e) {
         if (this.hash && document.querySelector(this.hash)) {
             e.preventDefault();
             playClickSound();
@@ -302,7 +312,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 window.addEventListener('load', () => {
     document.body.style.opacity = '0';
     document.body.style.transition = 'opacity 0.5s ease';
-    
+
     setTimeout(() => {
         document.body.style.opacity = '1';
         revealOnScroll();
@@ -315,7 +325,7 @@ document.addEventListener('DOMContentLoaded', () => {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
     };
-    
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -323,8 +333,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }, observerOptions);
-    
-    document.querySelectorAll('.fade-in, .slide-in').forEach(el => {
+
+    document.querySelectorAll('.fade-in, .slide-in, .reveal').forEach(el => {
         observer.observe(el);
     });
 });
